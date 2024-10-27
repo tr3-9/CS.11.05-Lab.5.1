@@ -15,13 +15,10 @@ public class Explore {
 
     public static void main(String[] args) {
         setUp();
-
-        // Call your own method(s) here!
+        System.out.println(getCountriesWithStartingAlphabet(countries, 'a'));
     }
 
-    /**
-     * Method that sets up the data into the arrays
-     */
+
     public static void setUp()
     {
         CSVReader.populateArrays();
@@ -41,4 +38,14 @@ public class Explore {
     }
 
     // Place your own method(s) here!
+    //Amount of countries with alphabet starting as their name
+    public static int getCountriesWithStartingAlphabet(String[] countries, char starting) {
+        int count = 0;
+        for(String country: countries) {
+            if (Character.toLowerCase(country.charAt(0)) == Character.toLowerCase(starting)) {
+                count ++;
+            }
+        }
+        return count;
+    }
 }
